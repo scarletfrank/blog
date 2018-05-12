@@ -1,6 +1,6 @@
 import scholarly
 import json
-with open('new_teacher.json', 'w', encoding = 'utf-8') as f:
+with open('new_teacher.json', 'r', encoding = 'utf-8') as f:
     data = f.read()
     json_data = json.loads(data)
 query = []
