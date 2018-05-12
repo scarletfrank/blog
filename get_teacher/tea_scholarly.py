@@ -5,7 +5,7 @@ with open('new_teacher.json', 'r', encoding = 'utf-8') as f:
     json_data = json.loads(data)
 query = []
 for k in json_data:
-    query += k ['title']
+    query.append(k ['title'])
 
 for t in query: # teacher
     i = 0
