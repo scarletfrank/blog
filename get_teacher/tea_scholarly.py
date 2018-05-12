@@ -5,13 +5,12 @@ with open('new_teacher.json', 'r', encoding = 'utf-8') as f:
     json_data = json.loads(data)
 query = []
 for k in json_data:
-    query.append(k ['title'])
+    query.append(k['title'])
 
 for t in query: # teacher
-    i = 0
     search_query = scholarly.search_pubs_query(t)
     with open('dataset/{}.json'.format(t), 'w', encoding = 'utf-8') as f:
-        data = [] 
+        data, i = [], 0 
         for a in search_query: # articles
             i += 1
             if i > 100:
