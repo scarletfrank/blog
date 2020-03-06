@@ -1,12 +1,9 @@
-from typing import List
 
-class ListNode:
-    def __init__(self, x):
-        self.val = x
-        self.next = None
-
-if __name__ == '__main__':
-    s = input()
+# fork from NowCoder
+# HG[3|B[2|CA]]F
+# HGBCACABCACABCACAF
+def uncompress(s: str):
+    #s = input()
     i = 0
     while i < len(s):
         if s[i] == ']': # backward to search first matching "["

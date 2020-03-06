@@ -52,3 +52,21 @@ uwsgi --http :8000 --module mysite.wsgi
 # the web client <-> the web server
 sudo /etc/init.d/nginx start    # start nginx
 ```
+
+## 2020.2.21
+
+思路：crontab 配合Nginx日志 
+[cron](https://linux.vbird.org/linux_basic/centos7/0430cron.php)
+[Java思路](http://huyan.couplecoders.tech/java/redis/nginx/2019/05/10/监听nginx日志实现博客访问计数/)
+[面试题](https://blog.csdn.net/u010590166/article/details/17242181)
+[log-parsing](https://easyengine.io/tutorials/nginx/log-parsing/)
+[nginx official](https://www.nginx.com/blog/sampling-requests-with-nginx-conditional-logging/)
+“侦测主机流量的咨询”：
+- 流量
+- 线上人数侦测
+
+
+```
+# On Ubuntu WSL:
+sudo service cron start
+```

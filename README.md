@@ -24,6 +24,10 @@ Some simple scripts to help cortana manage my computer.
 - TV
 - Sleep mode
 
+## Leetcode
+
+
+
 
 ## References
 
