@@ -36,25 +36,25 @@ class Solution:
                 else:
                     longest = max(longest, i - stack[-1])
         return longest
-    # Search in Rotated Sorted Array
+    # Search in Rotated Sorted Array, 联动 81
     # If nums[mid] and target are "on the same side" of nums[0], just take nums[mid]
+    # [solution](http://bangbingsyb.blogspot.com/2014/11/leetcode-search-in-rotated-sorted-array.html)
     def search(self, nums: List[int], target: int) -> int:
-        l, r = 0, len(nums)
-        while l < r:
+        l, r = 0, len(nums) - 1
+        while l <= r:
             m = (l + r) // 2
-            if (nums[m] < nums[0]) == (target < nums[0]):
-                num = nums[m]
-            else:
-                if target < nums[0]:
-                    num = -1 * math.inf
-                else:
-                    num = math.inf
-            if num < target:
-                l = m + 1
-            elif num > target:
-                r = m
-            else:
+            if nums[m] == target:
                 return m
+            if nums[m] < nums[r]: # right half sorted
+                if target > nums[m] and target <= nums[r]:
+                    l = m + 1
+                else:
+                    r = m - 1
+            else:                 # left half sorted
+                if target < nums[m] and target >= nums[l]:
+                    r = m - 1
+                else:
+                    l = m + 1 
         return -1
     # Find First and Last Position of Element in Sorted Array
     # Great Similar Question: https://leetcode.com/problems/first-bad-version/ 

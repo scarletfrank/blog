@@ -132,6 +132,33 @@ class Solution:
         if x == 0:
             return 0
         # zero check
+        l = []
+        if x < 0:
+            l.append("-")
+            x = x * -1
+        while x != 0:
+            t = x % 10
+            x = x // 10
+            l.append(t)
+        flag, y = 0, 0
+        for e in l:
+            if e == '-':
+                flag = 1
+                continue
+            else:
+                y = y * 10
+                y = y + e
+        y = y if flag == 0 else -1 * y
+        # sign check
+        # overflow check
+        if y <= 2 ** 31 - 1 and y >= -2 ** 31: 
+            return y
+        else:
+            return 0
+    def APIreverse(self, x: int) -> int:
+        if x == 0:
+            return 0
+        # zero check
         s = str(x)[::-1]
         y = int(s) if x >= 0 else int(s[:-1]) * -1
         # sign check
@@ -141,6 +168,36 @@ class Solution:
         else:
             return 0
     def myAtoi(self, s: str) -> int:
+        s = s.rstrip().lstrip() # whitespace
+        flag = 0
+        if len(s) == 0:
+            return 0
+        if s[0] == '-':
+            flag = 1
+            s = s[1:]
+        elif s[0] == '+':
+            s = s[1:]
+        elif s[0].isdigit() == False:
+            return 0 # no valid conversion could be performed
+        i = ""
+        for c in s:
+            if c.isdigit():
+                i = i + c
+            else:
+                break
+        y = 0
+        for e in i:
+            y = y * 10
+            y = y + (ord(e) - ord('0'))
+        y = y if flag == 0 else -1 * y
+        if y > 2 ** 31 - 1:
+            y = 2 ** 31 -1
+        elif y < -2 ** 31:
+            y = -2 ** 31
+        else:
+            return y # default case
+        return y
+    def APImyAtoi(self, s: str) -> int:
         s = s.rstrip().lstrip() # whitespace
         flag = 0
         if len(s) == 0:
@@ -169,6 +226,20 @@ class Solution:
             return x # default case
         return x
     def isPalindrome(self, x: int) -> bool:
+        if x < 0:
+            return False
+        l = []
+        z = x
+        while z != 0:
+            t = z % 10
+            z = z // 10
+            l.append(t)
+        y = 0
+        for e in l:
+            y = y * 10
+            y = y + e
+        return y == x
+    def APIisPalindrome(self, x: int) -> bool:
         s = str(x)
         if s == s[::-1]:
             return True

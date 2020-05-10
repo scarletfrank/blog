@@ -156,6 +156,21 @@ class Solution:
             cnt += 1
             cur = cur.next
         return head
+    # valid parentheses: stack
+    def isValid(self, s: str) -> bool:
+        m ={')':'(', '}':'{', ']':'['}
+        stack = []
+        for c in s:
+            if c in m:
+                n = stack.pop() if stack else '#' # essential, in case of error of poping from empty list
+                if n != m[c]:
+                    return False
+            else:
+                stack.append(c)
+        if stack == []:
+            return True
+        else:
+            return False
         
 
         

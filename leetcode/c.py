@@ -9,21 +9,6 @@ class ListNode:
         self.next = None
 
 class Solution:
-    # valid parentheses: stack
-    def isValid(self, s: str) -> bool:
-        m ={')':'(', '}':'{', ']':'['}
-        stack = []
-        for c in s:
-            if c in m:
-                n = stack.pop() if stack else '#' # essential, in case of error of poping from empty list
-                if n != m[c]:
-                    return False
-            else:
-                stack.append(c)
-        if stack == []:
-            return True
-        else:
-            return False
     def mergeTwoLists(self, l1: ListNode, l2:ListNode) -> ListNode:
         dummyHead = ListNode(0)
         p, q, current = l1, l2, dummyHead

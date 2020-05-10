@@ -65,8 +65,33 @@ sudo /etc/init.d/nginx start    # start nginx
 - 流量
 - 线上人数侦测
 
+## 3.18 
+
+### HTTPS
+
+- 申请证书和审核（阿里云），以及下载，通过RCP转递文件
+- 首先在nginx.conf配置证书和key
+- (1) https.conf 监听443端口，80端口添加rewrite (2) 改进了一下，将mysite监听的从8000转为443
+- Django 添加SSL相关选项
+- ALLOWED_HOST 添加一个不用www的地址。
+- 最先的排错从400 Bad Request 开始
+
+[nginx-https-best](https://www.cnblogs.com/kevingrace/p/6187072.html)
+[nginx-https-aliyun](https://help.aliyun.com/document_detail/98728.html?spm=5176.2020520163.cas.21.701fcDjvcDjvfG)
+[rcp](https://help.aliyun.com/document_detail/51935.html?spm=5176.10695662.1996646101.searchclickresult.26c45522vRQVhI)
 
 ```
 # On Ubuntu WSL:
 sudo service cron start
 ```
+
+### 4.7
+Node.js Introduction
+
+ECMAScript: ECMAScript 和 JavaScript 的关系是，前者是后者的规格，后者是前者的一种实现
+
+**REPL**: Read Eval Print Loop
+
+### 5.9
+
+Ctrl + F5, 强制刷新，默认清除了缓存
