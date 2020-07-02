@@ -1,4 +1,6 @@
-### log 2020.2.8 
+# Logs
+
+## log 2020.2.8 
 
 **猛烈宇宙交響曲・第七楽章「無限の愛」**
 
@@ -12,24 +14,26 @@
 
 双语字幕真挺累的，这还是我在复制别人的工作的时候，一想到Ben Eater最近的视频20分钟还是很快的语速，这个时间要花的也太长了，感叹一句油管的自动字幕功能真好。
 
-### log 2020.3
+## log 2020.3
 
 Ben Eater: What is a stack and how it works?
 
 首先讲了利用subroutine能够减少重复的代码，但是由于利用到了跳转指令，所以程序执行会变慢，同时引入了子程序调用中需要用到的数据结构：栈。
 
-### log 2020.2.11
+## log 2020.2.11
 
 - [x] obs timer: done 
 
 - basic Django tutorial
 
 **detailed tutorial setting**
+
 - [x] pip setting(tsinghua)
 - [x] install system-wide uWSGI and Django
 - [x] install nginx and start service
 
 Tips:
+
 1. Django中Project和App的关系：包含关系
 2. essential location: /etc/nginx/nginx.conf & uwsgi_params
 3. 排错日志：/var/log/nginx/error.log access.log
@@ -38,7 +42,7 @@ Tips:
 6. 部署线上时最大的区别在于权限（注意看日志），664不够，要666
 7. supervisor也是sudo安装即可。配置文件写好初始化一下，就能start了。
 
-```
+```bash
 # for task 1
 Start-Process -NoNewWindow python .\timer.py
 # for task 2
@@ -55,13 +59,15 @@ sudo /etc/init.d/nginx start    # start nginx
 
 ## 2020.2.21
 
-思路：crontab 配合Nginx日志 
+思路：crontab 配合Nginx日志
+
 [cron](https://linux.vbird.org/linux_basic/centos7/0430cron.php)
 [Java思路](http://huyan.couplecoders.tech/java/redis/nginx/2019/05/10/监听nginx日志实现博客访问计数/)
 [面试题](https://blog.csdn.net/u010590166/article/details/17242181)
 [log-parsing](https://easyengine.io/tutorials/nginx/log-parsing/)
 [nginx official](https://www.nginx.com/blog/sampling-requests-with-nginx-conditional-logging/)
 “侦测主机流量的咨询”：
+
 - 流量
 - 线上人数侦测
 
@@ -85,13 +91,55 @@ sudo /etc/init.d/nginx start    # start nginx
 sudo service cron start
 ```
 
-### 4.7
+## 4.7
 Node.js Introduction
 
 ECMAScript: ECMAScript 和 JavaScript 的关系是，前者是后者的规格，后者是前者的一种实现
 
 **REPL**: Read Eval Print Loop
 
-### 5.9
+## 5.9
 
 Ctrl + F5, 强制刷新，默认清除了缓存
+
+设计思路：
+
+- games.html 纯HTML+CSS+JS
+- produce.html 加入VUE要素的设计
+- monitor VUE和Django结合
+- blog VUE和Django结合
+
+## 6.23
+
+Online Judge：
+
+- 从数据库获取获取题目描述、输入测试、输出结果(Database Problems)
+- 用户通过浏览器输入，产生POST请求传输数据，形成代码文件，（安全检查），执行捕获输出和错误信息
+- 反馈信息回传，提交记录写入数据库(Database Submission)
+
+admin.css缺失跟nginx配置有关，原来应该通过static_root解决，不再需要App内Static
+
+## 2020.7.2
+
+- 采用Git来维护Django的App，同时再次修改了一波Static路径来保证能同步。
+
+### 去除双系统
+
+[方法5](https://blog.csdn.net/qq_15192373/article/details/81536602)
+
+```bash
+> diskpart
+> list disk-------------------------列出系统中拥有的磁盘
+> select disk 0--------------------选择EFI引导分区所在的磁盘，请根据实际情况选择
+> list partition--------------------列出所选磁盘拥有的分区
+> select partition 1---------------选择EFI引导分区，类型为系统的分区，就是EFI引导分区
+> assign letter=p-----------------为所选分区分配盘符，请分配空闲盘符
+```
+
+> 根据实际情况选到EFI的分区。显示出分区后，通过带管理员权限的Powershell来进入P盘
+
+```bash
+cd P:/[EFI]
+rm -r [ubuntu]
+```
+

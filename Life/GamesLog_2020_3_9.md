@@ -1,9 +1,9 @@
-## 常用游戏平台 购买&下载&游玩 Trick
+# 常用游戏平台 购买&下载&游玩 Trick
 
 > 不含 Epic，等哪天Epic把限速功能做出来再说吧。其他没提到的单纯可能只是我没有玩这个平台上的游戏而已
 
 
-### Battlenet
+## Battlenet
 
 1. 解锁亚服，参照[1]。
 
@@ -28,7 +28,7 @@
 
 
 
-### Origin
+## Origin
 
 0. 首先你要保证你能正常安装/打开origin/登录
 
@@ -42,7 +42,7 @@
 
 这个时候"%appdata%"，进去把../Roaming和../Local下的Origin删了，重新打开Origin输入一次账号和密码就好了。（似乎是把本地的缓存全删了，所以开个 “sticky notes/便笺” 记录一下自己的密码吧）
 
-### Windows Store
+## Windows Store
 
 既适用于下载Win10游戏（地平线4）也可用于下载Win10 App，就是啥时候能出个限速功能...不然很容易莫名其妙吃满。
 
@@ -57,6 +57,3 @@
 3. [Battle.net CDN](https://www.dogfight360.com/blog/date/2018/12/)
 4. [UsbEAm Hosts Editor](https://www.dogfight360.com/blog/date/2017/03/)
 5. [Origin CDN](https://www.dogfight360.com/blog/741/)
-
-
-

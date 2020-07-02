@@ -11,19 +11,19 @@ PlayResY: 1080
 
 [Aegisub Project Garbage]
 Last Style Storage: Default
-Audio File: L:/TubeGet/What is a stack and how does it work.mp4
-Video File: L:/TubeGet/What is a stack and how does it work.mp4
+Audio File: J:/youtube-dl/What is a stack and how does it work_ — 6502 part 5.mp4
+Video File: J:/youtube-dl/What is a stack and how does it work_ — 6502 part 5.mp4
 Video AR Mode: 4
 Video AR Value: 1.777778
 Video Zoom Percent: 0.500000
-Scroll Position: 2
-Active Line: 39
-Video Position: 11075
+Scroll Position: 15
+Active Line: 41
+Video Position: 11521
 
 [V4+ Styles]
 Format: Name, Fontname, Fontsize, PrimaryColour, SecondaryColour, OutlineColour, BackColour, Bold, Italic, Underline, StrikeOut, ScaleX, ScaleY, Spacing, Angle, BorderStyle, Outline, Shadow, Alignment, MarginL, MarginR, MarginV, Encoding
 Style: Default,Arial,20,&H00FFFFFF,&H000000FF,&H00000000,&H00000000,0,0,0,0,100,100,0,0,1,2,2,2,10,10,10,1
-Style: Sarasa Gothic,等距更纱黑体 T SC,24,&H00FFFFFF,&H000000FF,&H00000000,&H00000000,0,0,0,0,100,100,0,0,1,2,2,2,10,10,10,1
+Style: Sarasa Gothic,等距更纱黑体 T SC,30,&H00FFFFFF,&H000000FF,&H00000000,&H00000000,0,0,0,0,100,100,0,0,1,2,2,2,10,10,10,1
 
 [Events]
 Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text
@@ -67,4 +67,6 @@ Dialogue: 0,0:02:52.76,0:02:58.62,Sarasa Gothic,,0,0,0,,was just repeating those
 Dialogue: 0,0:02:59.18,0:03:01.86,Sarasa Gothic,,0,0,0,,and now this is what we left with and it's a lot shorter
 Dialogue: 0,0:03:02.04,0:03:04.54,Sarasa Gothic,,0,0,0,,and also I think a lot more clear of what it does
 Dialogue: 0,0:03:04.76,0:03:10.16,Sarasa Gothic,,0,0,0,,and a thing with assembly language there is a direct core relation with machine code it runs
-Dialogue: 0,0:03:10.16,0:03:12.16,Sarasa Gothic,,0,0,0,,
+Dialogue: 0,0:03:10.16,0:03:12.16,Sarasa Gothic,,0,0,0,,so let's save this
+Dialogue: 0,0:03:12.20,0:03:13.87,Sarasa Gothic,,0,0,0,,if we look at machine code we starting with
+Dialogue: 0,0:03:13.87,0:03:15.87,Sarasa Gothic,,0,0,0,,

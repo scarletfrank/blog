@@ -20,5 +20,21 @@ class Solution:
             else:
                 r = mid - 1
         return False
+    def sortColors(self, nums: List[int]) -> None:
+        """
+        Do not return anything, modify nums in-place instead.
+        """
+        i, j, k = 0, 0, len(nums)
+        mid = 1 # value of the middle elements
+        while j < k: 
+            if nums[j] < mid:
+                nums[i], nums[j] = nums[j], nums[i]
+                i += 1
+                j += 1
+            elif nums[j] > mid:
+                k -= 1
+                nums[j], nums[k] = nums[k], nums[j]
+            else:
+                j += 1
             
             
