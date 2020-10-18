@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta charset="UTF-8"><title>Vue Todo Tutorial</title></head>
+<body>
+<div id="app">
+  <input type="text" v-model="value">
+  <input type="button" value="发送">
+  <div>value 的值是：{{ value }}</div>
+</div>
+</body>
+<script src="https://cdn.bootcss.com/vue/2.5.16/vue.js"></script>
+<script>
+    var app = new Vue({
+        el: '#app',
+        data: function () {
+            return {value: ''}
+        }
+    })
+</script>
+</html>

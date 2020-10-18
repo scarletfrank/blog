@@ -1,4 +1,6 @@
-# Untitled
+# hands-on
+
+> 应该定一下标题，和*myNotes*要区分开。我定义为通过实践获得的想法，这些想法不是纯理论的，而是阅读材料后实践中发现的一些点。
 
 ## ass & lrc
 
@@ -10,19 +12,11 @@ Translation of a light novel.
 Language leanring is needed.
 How to adjust
 
-## Daily Life
+## Life
 
-1. timer for OBS Studio
+> 简单对文章进行分类。`jp`包含freestyle的广播记录；`cn`包含一些博客的初稿；`unk`是缩写。
 
-Generate time string into a txt so that OBS can have a timer.
 
-2. better Cortana 
-
-Some simple scripts to help cortana manage my computer.
-- Weather & News
-- Search for a song
-- TV
-- Sleep mode
 
 ## Leetcode
 
