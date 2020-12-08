@@ -146,4 +146,10 @@ rm -r [ubuntu]
 ## 2020.09
 
 
+## 2020.11
 
+- Django 结合Redis，配合RestFramework，做了个大概。在api APP中
+
+- 下一步是整体上docker [django-on-docker](https://testdriven.io/blog/dockerizing-django-with-postgres-gunicorn-and-nginx/)
+
+- 
