@@ -6,6 +6,13 @@
 
 ---
 
+## Md Markdown
+
+> 对文章以tag分类。`jp`包含freestyle的广播记录；`cn`包含一些博客的初稿；`unk`是缩写。
+
+## Leetcode
+
+Python语言的刷题记录，尽量不触碰Python的魔法，只讨论算法。我之前看到网上一种看法，将同种类型的题目一起刷，我觉得很有道理，类似举一反三的效果。因此，年末会抽空整理一下。
 
 ## ass & lrc
 
@@ -16,15 +23,6 @@ Software: Aegisub
 Translation of a light novel.
 Language leanring is needed.
 How to adjust
-
-## Life
-
-> 简单对文章进行分类。`jp`包含freestyle的广播记录；`cn`包含一些博客的初稿；`unk`是缩写。
-
-
-
-## Leetcode
-
 
 
 

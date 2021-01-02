@@ -1,4 +1,3 @@
-leetcode/py/mod/__pycache__/
-# 下次改成忽略全部目录下的引用
+__pycache__/
 freestyle-translation/*/video.mp4
 freestyle-translation/single-line-clips/*.mp4

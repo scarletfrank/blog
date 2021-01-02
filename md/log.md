@@ -1,6 +1,14 @@
 # Logs
 
-## log 2020.2.8 
+## 2021
+
+> 未知的一年
+
+## 2020
+
+> 神秘的一年
+
+### 2.8
 
 **猛烈宇宙交響曲・第七楽章「無限の愛」**
 
@@ -14,13 +22,13 @@
 
 双语字幕真挺累的，这还是我在复制别人的工作的时候，一想到Ben Eater最近的视频20分钟还是很快的语速，这个时间要花的也太长了，感叹一句油管的自动字幕功能真好。
 
-## log 2020.3
+### 2.18
 
 Ben Eater: What is a stack and how it works?
 
 首先讲了利用subroutine能够减少重复的代码，但是由于利用到了跳转指令，所以程序执行会变慢，同时引入了子程序调用中需要用到的数据结构：栈。
 
-## log 2020.2.11
+### 2.11
 
 - [x] obs timer: done 
 
@@ -57,7 +65,7 @@ uwsgi --http :8000 --module mysite.wsgi
 sudo /etc/init.d/nginx start    # start nginx
 ```
 
-## 2020.2.21
+### 2.21
 
 思路：crontab 配合Nginx日志
 
@@ -71,9 +79,9 @@ sudo /etc/init.d/nginx start    # start nginx
 - 流量
 - 线上人数侦测
 
-## 3.18 
+### 3.18 
 
-### HTTPS
+#### HTTPS
 
 - 申请证书和审核（阿里云），以及下载，通过RCP转递文件
 - 首先在nginx.conf配置证书和key
@@ -91,14 +99,14 @@ sudo /etc/init.d/nginx start    # start nginx
 sudo service cron start
 ```
 
-## 4.7
+### 4.7
 Node.js Introduction
 
 ECMAScript: ECMAScript 和 JavaScript 的关系是，前者是后者的规格，后者是前者的一种实现
 
 **REPL**: Read Eval Print Loop
 
-## 5.9
+### 5.9
 
 Ctrl + F5, 强制刷新，默认清除了缓存
 
@@ -109,7 +117,7 @@ Ctrl + F5, 强制刷新，默认清除了缓存
 - monitor VUE和Django结合
 - blog VUE和Django结合
 
-## 6.23
+### 6.23
 
 Online Judge：
 
@@ -119,11 +127,11 @@ Online Judge：
 
 admin.css缺失跟nginx配置有关，原来应该通过static_root解决，不再需要App内Static
 
-## 2020.7.2
+### 7.2
 
 - 采用Git来维护Django的App，同时再次修改了一波Static路径来保证能同步。
 
-### 去除双系统
+#### 去除双系统
 
 [方法5](https://blog.csdn.net/qq_15192373/article/details/81536602)
 
@@ -143,13 +151,10 @@ cd P:/[EFI]
 rm -r [ubuntu]
 ```
 
-## 2020.09
 
-
-## 2020.11
+### 11.1
 
 - Django 结合Redis，配合RestFramework，做了个大概。在api APP中
 
 - 下一步是整体上docker [django-on-docker](https://testdriven.io/blog/dockerizing-django-with-postgres-gunicorn-and-nginx/)
 
-- 
