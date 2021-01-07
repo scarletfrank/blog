@@ -16,6 +16,11 @@ class TestSolution(unittest.TestCase):
         k = 5
         target = 9
         self.assertEqual(sol.findKthPositive(arr, k), target)
+    def test_balloon(self):
+        sol = Solution()
+        text = "nlaebolko"
+        target = 1
+        self.assertEqual(sol.maxNumberofBallons(text), target)
 
 if __name__ == '__main__':
     unittest.main()

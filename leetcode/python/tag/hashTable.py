@@ -1,4 +1,7 @@
+from logging import basicConfig
 from typing import List
+from collections import Counter
+
 
 class Solution:
     def strStr(self, haystack: str, needle: str) -> int:
@@ -28,6 +31,7 @@ class Solution:
                 return True
         return False
         # shortcut: return len(nums) != len(set(nums))
+
     def containsNearbyDuplicate(self, nums, k):
         """
         :type nums: List[int]
@@ -44,29 +48,31 @@ class Solution:
                 if abs(duplicate[num] - i) <= k:
                     return True
                 else:
-                    duplicate[num] = i # 重新出发
+                    duplicate[num] = i  # 重新出发
         return False
-    
+
     def containsNearbyAlmostDuplicate(self, nums: List[int], k: int, t: int) -> bool:
         duplicate = {}
         # 相比二，数字也有一个差距条件
         for i, num in enumerate(nums):
             pass
         pass
+
     def numIdenticalPairs(self, nums: List[int]) -> int:
         m = {}
         cnt = 0
-        m[nums[0]] = 1 # FIRST ELEMENT 
+        m[nums[0]] = 1  # FIRST ELEMENT
         for i in range(1, len(nums)):
             if nums[i] in m:
                 # 向后序列数字一定满足 i < j
                 # good pairs数量应该增加前面的数量
                 print(nums[i], i, cnt)
                 cnt += nums[i]
-                nums[i] += 1 
+                nums[i] += 1
             else:
-                m[nums[i]] = 1 # 第一个
+                m[nums[i]] = 1  # 第一个
         return cnt
+
     def findKthPositive(self, arr: List[int], k: int) -> int:
         pm = {}
         for a in arr:
@@ -76,17 +82,71 @@ class Solution:
             if i not in pm:
                 cnt += 1
             if cnt == k:
-                return i 
+                return i
+
     def uniqueOccurrences(self, arr: List[int]) -> bool:
         m = {}
         for a in arr:
             if a in m:
-                m[a] += 1 
+                m[a] += 1
             else:
                 m[a] = 1
+
+    def maxNumberOfBalloons(self, text: str) -> int:
+        balloon = {'l': 2, 'o': 2, 'b': 1, 'a': 1, 'n': 1}
+        cnter = Counter(text)
+        num = []
+        for k in balloon:
+            judge = cnter[k] // balloon[k]  # 整除
+            num.append(judge)
+        return min(num)
+
+    def uniqueOccurrences(self, arr: List[int]) -> bool:
+        c = Counter(arr)
+        return len(c) == len(set(c.values()))
+
+    # 糖果节制，用集合统计糖果类型比哈希表更快（那你这题为啥分类成哈希表）
+    def distributeCandies(self, candyType: List[int]) -> int:
+        candyCounter = set(candyType)  # Counter => set
+        return min(len(candyType)//2, len(candyCounter))
+
+    # 找出 t 比 s 多的一个字母
+    # 看到最本质的方法是直接计算相差的ascii数字
+    def findTheDifference(self, s: str, t: str) -> str:
+        cnt_s = Counter(s)
+        cnt_t = Counter(t)
+        for i in cnt_t:
+            if cnt_t[i] - cnt_s[i] == 1:
+                return i
+
+    # 这不是集合的题目吗 哪里是哈希表了
+    def intersection(self, nums1: List[int], nums2: List[int]) -> List[int]:
+        return list(set(nums1) & set(nums2))
+
+    # 集合比哈希还快 ?
+    # 似乎差不多
+    def repeatedNTimes(self, A: List[int]) -> int:
+        """
+        k = set()
+        for i in A:
+            if i in k:
+                return i
+            else:
+                k.add(i)
+        """
+        n = len(A) // 2
+        cnt = Counter(A)
+        for i in cnt:
+            if cnt[i] > 1:
+                return i 
                 
+    # 怎么就变成统计次数并加和了
+    def subdomainVisits(self, cpdomains: List[str]) -> List[str]:
+        
+
 if __name__ == '__main__':
     sol = Solution()
-    nums = [1,2,3,1,1,3]
-    arr = [1,2,2,1,1,3]
-    print(sol.numIdenticalPairs(nums))
+    text = "loonbalxballpoon"
+    nums = [1, 2, 3, 1, 1, 3]
+    arr = [1, 2, 2, 1, 1, 3]
+    sol.maxNumberOfBalloons(text)
