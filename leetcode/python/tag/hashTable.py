@@ -139,14 +139,30 @@ class Solution:
         for i in cnt:
             if cnt[i] > 1:
                 return i 
-                
-    # 怎么就变成统计次数并加和了
-    def subdomainVisits(self, cpdomains: List[str]) -> List[str]:
+
+    def countCharacters(self, words: List[str], chars: str) -> int:
+        sum, chars_counter = 0, Counter(chars)
+        for word in words:
+            word_counter = Counter(word)
+            for c in word_counter:
+                if word_counter[c] > chars_counter[c]:
+                    break
+            else:
+                sum += len(word)
+        return sum
+    def intersect(self, nums1: List[int], nums2: List[int]) -> List[int]:
+        cnt1, cnt2 = Counter(nums1), Counter(nums2)
+        s = set(nums1 + nums2)
+        result = []
+        for i in s:
+            if i in cnt1 and i in cnt2:
+                result += [i] * min(cnt1[i], cnt2[i])
+        return result
         
 
 if __name__ == '__main__':
     sol = Solution()
-    text = "loonbalxballpoon"
-    nums = [1, 2, 3, 1, 1, 3]
-    arr = [1, 2, 2, 1, 1, 3]
-    sol.maxNumberOfBalloons(text)
+    nums1 = [4,9,5]
+    nums2 = [9,4,9,8,4]
+    result = sol.intersect(nums1, nums2)
+    print(result)
