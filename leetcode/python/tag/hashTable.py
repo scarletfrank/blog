@@ -1,7 +1,7 @@
 from logging import basicConfig
 from typing import List
 from collections import Counter
-
+import math
 
 class Solution:
     def strStr(self, haystack: str, needle: str) -> int:
@@ -150,6 +150,9 @@ class Solution:
             else:
                 sum += len(word)
         return sum
+    """
+
+    """
     def intersect(self, nums1: List[int], nums2: List[int]) -> List[int]:
         cnt1, cnt2 = Counter(nums1), Counter(nums2)
         s = set(nums1 + nums2)
@@ -158,11 +161,40 @@ class Solution:
             if i in cnt1 and i in cnt2:
                 result += [i] * min(cnt1[i], cnt2[i])
         return result
-        
+
+    def findRestaurant_naive(self, list1: List[str], list2: List[str]) -> List[str]:
+        """
+        naive solution of https://leetcode.com/problems/minimum-index-sum-of-two-lists/
+        """
+        cnt1 = {v:i for i, v in enumerate(list1)}
+        cnt2 = {v:i for i, v in enumerate(list2)}
+        common = set(list1).intersection(set(list2))
+        com_m = {}
+        for c in common:
+            com_m[c] = cnt1[c] + cnt2[c]
+        min_value = min(com_m.items(), key=lambda x: x[1])[1]
+        output = [x[0] for x in com_m.items() if x[1] == min_value]
+        return output
+    def findRestaurant(self, list1: List[str], list2: List[str]) -> List[str]:
+        """
+        linear solution of https://leetcode.com/problems/minimum-index-sum-of-two-lists/
+        """
+        cnt1 = {v:i for i, v in enumerate(list1)}
+        min_sum, res = math.inf, []
+        for i, e in enumerate(list2):
+            if e in cnt1:
+                sum = i + cnt1[e]
+                if sum < min_sum:
+                    res.clear()
+                    res.append(e)
+                    min_sum = sum
+                elif sum == min_sum:
+                    res.append(e)
+        return res
 
 if __name__ == '__main__':
     sol = Solution()
-    nums1 = [4,9,5]
-    nums2 = [9,4,9,8,4]
-    result = sol.intersect(nums1, nums2)
+    list1 = ["Shogun","Tapioca Express","Burger King","KFC"]
+    list2 = ["KNN","KFC","Burger King","Tapioca Express","Shogun"]
+    result = sol.findRestaurant(list1, list2)
     print(result)
