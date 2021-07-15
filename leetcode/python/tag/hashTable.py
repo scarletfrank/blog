@@ -1,6 +1,7 @@
 from logging import basicConfig
 from typing import List
 from collections import Counter
+from itertools import chain
 import math
 
 class Solution:
@@ -191,10 +192,32 @@ class Solution:
                 elif sum == min_sum:
                     res.append(e)
         return res
+    
+    def canFormArray_naive(self, arr: List[int], pieces: List[List[int]]) -> bool:
+        # basic case
+        if Counter(arr) != Counter(chain.from_iterable(pieces)):
+            return False
+        # piece which len() > 1
+        arm = {}
+        for i, a in enumerate(arr):
+            arm[a] = i
+        for key in list(filter(lambda p: len(p) > 1, pieces)):
+            e, l = key[0], len(key)
+            k = arm[e]
+            if key != arr[k: k + l]:
+                return False
+        return True
+    def canFormArray(self, arr: List[int], pieces: List[List[int]]) -> bool:
+        piece = {p[0]:p for p in pieces}
+        res = []
+        for num in arr:
+            res += piece.get(num, [])
+            
+        return res == arr
 
 if __name__ == '__main__':
     sol = Solution()
-    list1 = ["Shogun","Tapioca Express","Burger King","KFC"]
-    list2 = ["KNN","KFC","Burger King","Tapioca Express","Shogun"]
-    result = sol.findRestaurant(list1, list2)
+    arr = [91,4,64,78]
+    pieces = [[78],[4,64],[91]]
+    result = sol.canFormArray(arr, pieces)
     print(result)

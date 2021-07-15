@@ -20,7 +20,7 @@ class TestSolution(unittest.TestCase):
         sol = Solution()
         text = "nlaebolko"
         target = 1
-        self.assertEqual(sol.maxNumberofBallons(text), target)
+        self.assertEqual(sol.maxNumberOfBalloons(text), target)
 
 if __name__ == '__main__':
     unittest.main()
