@@ -156,26 +156,26 @@ Servless微服务
 1. 事件源 / 直接调用
 2. 函数计算（同步调用/异步调用）
 
-### 函数粘合云服务
+#### 函数粘合云服务
 
 事件驱动，简化编程模型，编写少量的代码即可串联多个服务实现复杂的功能
 
 > 例子：缩略图
 
-### 函数的开发与配置
+#### 函数的开发与配置
 
-#### 基本概念-服务
+##### 基本概念-服务
 
 - 日志配置
 - 文件存储配置
 - 网络配置
 - 权限
 
-#### 基本概念-函数
+##### 基本概念-函数
 
-#### 基本概念-版本/别名
+##### 基本概念-版本/别名
 
-### 函数的调试与部署
+#### 函数的调试与部署
 
 函数调试方法：
 
@@ -189,9 +189,9 @@ Servless微服务
 - 在线部署
 - 客户端部署：通过VS Code插件，通过命令行工具
 
-### 函数计算在音视频场景实践
+#### 函数计算在音视频场景实践
 
-#### 场景介绍
+##### 场景介绍
 
 > 音视频领域高速增长，远程会议、在线教育、短视频软件
 >
@@ -203,7 +203,7 @@ Servless微服务
 
 **自建服务** 对比 **函数计算+函数工作流 Serverless**
 
-#### 最佳实践
+##### 最佳实践
 
 1. 英语在线教育，需求：音频平衡、转码等
 
@@ -221,18 +221,179 @@ Servless微服务
 
    视频教材需要剪辑、切分、组合转码、分辨率调整、客户端适配，且需求量存在波峰波谷
 
-#### 案例演示
+##### 案例演示
 
 > Python3 写入OSS，ffmpeg用于转码
 
-### 搭建弹性可拓展的Web API
-
+#### 搭建弹性可拓展的Web API
 
 
 
 ### Serverless 容器从入门到精通: Serverless K8s
 
+#### Serverless K8s 介绍
+
+**ECI**: Elastic Container Instance
+
+**ACK** Alibaba Kubernetes Cluster
+
+**ASK** Alibaba Serverless Kubernetes Cluster
+
+*ECI和ECS混合部署*
+
+**优点**
+
+- GPU Instance
+- Spot Instance
+- 弹性负载Elastic Workload
+
+**场景**
+
+- 免运维应用托管
+- ECI弹性资源池
+- 大数据计算
+- CI/CD 持续集成
+
+####  Serverless K8s 应用部署及扩缩容
+
+- 人工扩容
+- HPA扩容 根据基础指标扩容
+- Cron HPA 定时扩容
+- alibaba-cloud-metrics-adapter 其他指标扩容
+
+#### 使用Spot低成本运行Job任务
+
+实例类型对比：
+
+- ECI RI实例 7x24小时
+- **Spot实例**： 对于小于一小时的任务和Job，抢占式实例，竞价型实例
+- 按量实例 对于弹性突发流量部分
+
+场景：大数据、媒体处理、科学计算、压力测试
+
+#### 低成本运行Spark计算
+
+**ECI 弹性容器实例** 
+
+- 免运维的IaaS
+- 基于Kata的安全沙箱容器
+- 无缝对接K8s
+
+##### Spark on K8s
+
+**优点**
+
+- 统一的资源管理与调度
+- 计算与存储分离
+- 弹性的集群基础设施
+- 大数据上云
+- 容器化的优势
+- 实现应用的资源隔离和限制
+
+**核心**
+
+- Spark Operator
+  - SparkApplication
+  - Submission runner
+  - Spark pod monitor
+- 计算与存储分离
+
+#### GPU机器学习开箱即用
+
+##### ECI GPU
+
+- 预装GPU驱动
+- 兼容CRI接口
+- 一键式部署
+
+##### ECI GPU 实现
+
+通过Nvidia开源`libnvidia-container`组件，将ECI预装的GPU驱动文件挂载到用户容器中，则借助这些动态库文件访问到GPU
+
+1. containerd向runc下发创建使用GPU容器的命令
+2. runc创建容器时，调用 prestart hook
+3. hook调用libnvidia-container，挂载必要的动态库
+4. 容器进程通过挂载的动态库访问GPU
+
+##### ECI GPU 使用
+
+在`.yaml`增加配置
+
+##### 手写识别演示实例
+
+#### Knative的极致Serverless体验
+
+> Knative, Kubernetes-based platform to build, deploy and manage modern serverless workloads
+
+##### 为什么需要Knative
+
+- Serverless未来可期
+- 基于实例数的灰度策略和弹性之间的矛盾
+- 提供面向Serverless应用的抽象
+
+##### Knative Serving简介
+
+概念：
+
+- Service
+- Configuration
+- Revision
+- Route
+
+##### Knative和云的完美融合
+
+- Gateway和云融合
+- 管控组件下沉
+- 保留实例，解决冷启动问题
+
+#### 快速构建GitLab
+
+> GitLab CI on ASK
+
+优势
+
+- 服务高可用
+- 无需维护k8s Master、Node节点，在没有任何构建任务的情况下，只需要运行一个Pod
+- 按需服务，创建一个构建任务，启动一个Pod
+
+过程
+
+- 在ASK集群上运行gitlab-runner
+- 通过GitLab CICD Pipeline部署Java应用到ASK集群中
+
 ### 降本增效实战利器： Serverless 应用引擎
+
+#### 在线应用的Serverless实践
+
+##### 最佳实践1： 低门槛微服务架构转型的解决方案
+
+##### 最佳实践2：免运维、一键启停开发测试环境的降本方案
+
+##### 最佳实践3：精确容量、极致弹性的解决方案
+
+##### 最佳实践4：高效闭环的DevOps体系
+
+#### 通过IDE/Maven部署Serverless应用实践
+
+##### SAE部署方式：
+
+- WAR包
+- Jar包
+- 镜像
+
+##### Maven插件
+
+##### IDE插件
+
+Alibaba Cloud Toolkit
+
+#### 企业级CI/CD工具部署Serverless应用的落地实践
+
+##### 背景
+
+##### 云效部署
+
+##### Jenkins部署
 
 ## Serverless 场景体验
 
